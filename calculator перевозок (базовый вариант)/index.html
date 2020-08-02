@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Калькулятор доставки</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">  
+        <link rel="stylesheet" type="text/css" href="build/css/main.min.css">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=5b9b6192-f415-46eb-a744-bc65b3ca3264&lang=ru_RU"
+        type="text/javascript">
+        </script>   
+        <script src="build/js/all.js" defer></script>
+    </head>
+    <body class="fixed-container">
+        <h1>Проложить и рассчитать маршрут доставки</h1>
+        <ul class="type flex-container">
+            <li>
+                <button class="tent">
+                    <span>Тент</span>
+                </button>
+            </li>
+            <li>
+                <button class="bort">
+                    <span>Борт</span>
+                </button>
+            </li>
+            <li>
+                <button class="termo">
+                    <span>Термобудка</span>
+                </button>
+            </li>
+            <li>
+                <button class="refr">
+                    <span>Рефрижератор</span>
+                </button>
+            </li>
+            <li>
+                <button class="furgon">
+                    <span>Фургон</span>
+                </button>
+            </li>
+            <li>
+                <button class="tral">
+                    <span>Трал</span>
+                </button>
+            </li>
+            <li>
+                <button class="cont-voz">
+                    <span>Контейнеровоз</span>
+                </button>
+            </li>
+        </ul>
+        <div class="map-container">
+            <div class="print__type">
+               <div class="print__type__type">
+                    <p class="label-for-types">Выберите тип машины и объем доставки</p>
+                   <ul class="type__example type__tent"> 
+                       <li class="firstVar">
+                           <img src="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                           <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                       </li>
+                       <li class="twoVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/tent40.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 40м3 и 6т</span><br><span> От 18руб/км</span></p>
+                        </li>
+                        <li class="threeVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/tent60.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 60м3 и 9т</span><br><span> От 16руб/км</span></p>
+                        </li>
+                        <li class="fourVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/tent120.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 90м3 и 9т</span><br><span> От 20руб/км</span></p>
+                        </li>
+                   </ul>
+                   <ul class="type__example type__bort">
+                        <li class="firstVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/bort20.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                        </li>
+                        <li class="twoVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/bort40.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 40м3 и 6т</span><br><span> От 18руб/км</span></p>
+                        </li>
+                        <li class="threeVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/bort60.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 60м3 и 9т</span><br><span> От 16руб/км</span></p>
+                        </li>
+                        <li class="fourVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/bort90.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 90м3 и 9т</span><br><span> От 20руб/км</span></p>
+                        </li>
+                    </ul>
+                    <ul class="type__example type__termo">
+                        <li class="firstVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/term20.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                        </li>
+                        <li class="twoVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/term40.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 40м3 и 6т</span><br><span> От 18руб/км</span></p>
+                         </li>
+                         <li class="threeVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/term60.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 60м3 и 9т</span><br><span> От 16руб/км</span></p>
+                         </li>
+                         <li class="fourVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/term120.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 90м3 и 9т</span><br><span> От 20руб/км</span></p>
+                         </li>
+                    </ul>
+                    <ul class="type__example type__reft">
+                         <li class="firstVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/ref20.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                         </li>
+                         <li class="twoVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/ref40.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 40м3 и 6т</span><br><span> От 18руб/км</span></p>
+                         </li>
+                         <li class="threeVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/ref60.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 60м3 и 9т</span><br><span> От 16руб/км</span></p>
+                         </li>
+                         <li class="fourVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/ref120.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 90м3 и 9т</span><br><span> От 20руб/км</span></p>
+                         </li>
+                     </ul>
+                     <ul class="type__example type__furgon">
+                        <li class="firstVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/furg.jpeg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                        </li>
+                    </ul>
+                    <ul class="type__example type__tral">
+                         <li class="firstVar">
+                             <img src="http://kubtek.ru/wp-content/uploads/2020/05/tr.jpg" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                             <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                         </li>
+                     </ul>
+                     <ul class="type__example type__contVoz">
+                        <li class="firstVar">
+                            <img src="http://kubtek.ru/wp-content/uploads/2020/05/konteiner.png" alt="http://kubtek.ru/wp-content/uploads/2020/05/tent20.png">
+                            <p><span>До 20м3 и 3т</span><br><span>От 14руб/км</span></p>
+                        </li>
+                    </ul>
+               </div>
+               <ul class="enter">
+                   <li>
+                       <input type="text" class="out" placeholder="Откуда" onchange="isValid('.out')">
+                       <p class="label-for-out">Введите адрес в формате: Москва, улица Ленина, 5</p>
+                   </li>
+                      
+                   <li>
+                        <input type="text" class="to-go" placeholder="Куда"  onchange="isValid('.to-go')">
+                        <p class="label-for-toGo">Введите адрес в формате: Москва, улица Ленина, 5</p>
+                   </li>
+                   <li class="add-new">
+                       <span></span>
+                       <span></span>
+                       <p class="about__point">Добавить промежуточный пункт</p>
+                       <p class="about__point2">В случае, если вы формируете сложный маршрут (более 3 точек на карте) необходимо позвонить по телефону +79139123542 и оформить заявку через оператора</p>
+                   </li>
+                   <li class="btn">
+                       <button class="btn__enter">
+                           <span>Рассчитать</span>
+                       </button>
+                   </li>
+               </ul>
+            </div>
+            <div class="map-container__right">
+                <div id="map" class="fixed-container"></div>
+            </div>
+        </div>
+        <div class="popup">
+            <p>Спасибо! С Вами свяжутся в ближайшее время!
+                <span class="countDown">5</span>
+            </p>
+            <div class="close-popup">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </body>
+ </html>
+ 
+ 
